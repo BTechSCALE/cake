@@ -282,6 +282,35 @@ Blockly.Blocks['library_math_round'] = {
     onchange: Blockly.Blocks.requireInFunction
 };
 
+Blockly.Blocks['library_math_assignment_by'] = {
+    /**
+     * Block for rounding functions.
+     * @this Blockly.Block
+     */
+    init: function() {
+        var OPERATORS =
+            [[Blockly.Msg.MATH_ASSIGNMENT_BY_PLUS_EQUAL, 'PLUS_EQUAL'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_MINUS_EQUAL, 'MINUS_EQUAL'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_TIMES_EQUAL, 'TIMES_EQUAL'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_DIVIDE_EQUAL, 'DIVIDE_EQUAL'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_MODULO_EQUAL, 'MODULO_EQUAL']];
+        this.setColour(350);
+        this.setPreviousStatement(true, ["STATEMENT", "SET"]);
+        this.setNextStatement(true, ["STATEMENT", "SET"]);
+        this.interpolateMsg(
+            // TODO: Combine these messages instead of using concatenation.
+            '%1 %2 %3',
+            ['VAR', new Blockly.FieldVariable(Blockly.Msg.SELECT_MENU, null, this)],
+            ['OP', new Blockly.FieldDropdown(OPERATORS, null, this)],
+            ['VALUE', null, Blockly.ALIGN_RIGHT],
+            Blockly.ALIGN_RIGHT);
+        this.setTooltip(Blockly.Msg.MATH_ASSIGNMENT_BY_TOOLTIP);
+        this.tag = Blockly.Msg.TAG_MATH_ASSIGNMENT_BY;
+    },
+    //when the block is changed,
+    onchange: Blockly.Blocks.requireInFunction
+}
+
 Blockly.Blocks['library_math_numcheck'] = {
     init: function() {
         var CONDITION =
