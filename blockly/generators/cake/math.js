@@ -200,6 +200,28 @@ Blockly.cake['library_math_round'] = function(block) {
     return [code, Blockly.cake.ORDER_NONE];
 };
 
+Blockly.cake['library_math_assignment_by'] = function(block) {
+    var varName = Blockly.cake.variableDB_.getName(block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
+    var operator = block.getFieldValue('OP');
+    var argument0 = Blockly.cake.valueToCode(block, 'VALUE',
+            Blockly.cake.ORDER_ASSIGNMENT) || '0';
+
+    switch (operator) {
+        case 'PLUS_EQUAL':
+            return `${varName} += ${argument0};\n`;
+        case 'MINUS_EQUAL':
+            return `${varName} -= ${argument0};\n`;
+        case 'TIMES_EQUAL':
+            return `${varName} *= ${argument0};\n`;
+        case 'DIVIDE_EQUAL':
+            return `${varName} /= ${argument0};\n`;
+        case 'MODULO_EQUAL':
+            return `${varName} %= ${argument0};\n`;
+        default:
+            throw 'Unknown assignment by operator: ' + operator;
+    }
+};
+
 Blockly.cake['library_math_numcheck'] = function(block) {
     // Math operators with single operand.
     var operator = block.getFieldValue('CONDITIONS');
