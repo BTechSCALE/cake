@@ -295,8 +295,8 @@ Blockly.Blocks['library_math_assignment_by'] = {
               [Blockly.Msg.MATH_ASSIGNMENT_BY_DIVIDE_EQUAL, 'DIVIDE_EQUAL'],
               [Blockly.Msg.MATH_ASSIGNMENT_BY_MODULO_EQUAL, 'MODULO_EQUAL']];
         this.setColour(350);
-        this.setPreviousStatement(true, ["STATEMENT", "SET"]);
-        this.setNextStatement(true, ["STATEMENT", "SET"]);
+        this.setPreviousStatement(true, ["STATEMENT"]);
+        this.setNextStatement(true, ["STATEMENT"]);
         this.interpolateMsg(
             // TODO: Combine these messages instead of using concatenation.
             '%1 %2 %3',
