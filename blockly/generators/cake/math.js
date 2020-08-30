@@ -208,15 +208,15 @@ Blockly.cake['library_math_assignment_by'] = function(block) {
 
     switch (operator) {
         case 'PLUS_EQUAL':
-            return `${varName} += ${argument0};\n`;
+            return varName + ' += ' + argument0 + ';\n';
         case 'MINUS_EQUAL':
-            return `${varName} -= ${argument0};\n`;
+            return varName + ' -= ' + argument0 + ';\n';
         case 'TIMES_EQUAL':
-            return `${varName} *= ${argument0};\n`;
+            return varName + ' *= ' + argument0 + ';\n';
         case 'DIVIDE_EQUAL':
-            return `${varName} /= ${argument0};\n`;
+            return varName + ' /= ' + argument0 + ';\n';
         case 'MODULO_EQUAL':
-            return `${varName} %= ${argument0};\n`;
+            return varName + ' %= ' + argument0 + ';\n';
         default:
             throw 'Unknown assignment by operator: ' + operator;
     }
