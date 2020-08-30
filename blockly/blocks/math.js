@@ -289,19 +289,19 @@ Blockly.Blocks['library_math_assignment_by'] = {
      */
     init: function() {
         var OPERATORS =
-            [[Blockly.Msg.MATH_ASSIGNMENT_BY_PLUS_EQUAL, 'PLUS_EQUAL'],
-              [Blockly.Msg.MATH_ASSIGNMENT_BY_MINUS_EQUAL, 'MINUS_EQUAL'],
-              [Blockly.Msg.MATH_ASSIGNMENT_BY_TIMES_EQUAL, 'TIMES_EQUAL'],
-              [Blockly.Msg.MATH_ASSIGNMENT_BY_DIVIDE_EQUAL, 'DIVIDE_EQUAL'],
-              [Blockly.Msg.MATH_ASSIGNMENT_BY_MODULO_EQUAL, 'MODULO_EQUAL']];
+            [[Blockly.Msg.MATH_ASSIGNMENT_BY_INCREMENT, 'INCREMENT'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_DECREMENT, 'DECREMENT'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_MULTIPLY, 'MULTIPLY'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_DIVIDE, 'DIVIDE'],
+              [Blockly.Msg.MATH_ASSIGNMENT_BY_MODULO, 'MODULO']];
         this.setColour(350);
         this.setPreviousStatement(true, ["STATEMENT"]);
         this.setNextStatement(true, ["STATEMENT"]);
         this.interpolateMsg(
             // TODO: Combine these messages instead of using concatenation.
-            '%1 %2 %3',
-            ['VAR', new Blockly.FieldVariable(Blockly.Msg.SELECT_MENU, null, this)],
+            '%1 %2 by %3',
             ['OP', new Blockly.FieldDropdown(OPERATORS, null, this)],
+            ['VAR', new Blockly.FieldVariable(Blockly.Msg.SELECT_MENU, null, this)],
             ['VALUE', null, Blockly.ALIGN_RIGHT],
             Blockly.ALIGN_RIGHT);
         this.setTooltip(Blockly.Msg.MATH_ASSIGNMENT_BY_TOOLTIP);

@@ -207,15 +207,15 @@ Blockly.cake['library_math_assignment_by'] = function(block) {
             Blockly.cake.ORDER_ASSIGNMENT) || '0';
 
     switch (operator) {
-        case 'PLUS_EQUAL':
+        case 'INCREMENT':
             return varName + ' += ' + argument0 + ';\n';
-        case 'MINUS_EQUAL':
+        case 'DECREMENT':
             return varName + ' -= ' + argument0 + ';\n';
-        case 'TIMES_EQUAL':
+        case 'MULTIPLY':
             return varName + ' *= ' + argument0 + ';\n';
-        case 'DIVIDE_EQUAL':
+        case 'DIVIDE':
             return varName + ' /= ' + argument0 + ';\n';
-        case 'MODULO_EQUAL':
+        case 'MODULO':
             return varName + ' %= ' + argument0 + ';\n';
         default:
             throw 'Unknown assignment by operator: ' + operator;
